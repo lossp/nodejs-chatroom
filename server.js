@@ -8,6 +8,9 @@ var http = require('http').Server(app);
 var io = require('socket.io')(http);
 var express = require('express')
 
+var chatServer = require('./lib/chat_server');
+chatServer.listen(http)
+
 var cache = {};//用来缓存文件内容的对象
 
 //发送文件数据以及错误响应
